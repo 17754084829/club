@@ -7,25 +7,25 @@
 
     <!--sql-->
     <select id="getList" parameterType="club.model.ClubMember" resultType="club.model.ClubMember">
-        select * from club_member
-        where 1=1
+        select m.*,cl.name as club_name from club_member m,club_info cl
+        where m.club_id=cl.id
         <if test="id !=null">
-            and  id=#{id}
+            and  m.id=#{id}
         </if>
         <if test="name !=null">
-            and  `name`=#{name}
+            and  m.`name`=#{name}
         </if>
         <if test="club_id !=null">
             and  club_id=#{club_id}
         </if>
         <if test="sex !=null">
-            and  sex=#{sex}
+            and  m.sex=#{sex}
         </if>
         <if test="birthday !=null">
-            and  birthday=#{birthday}
+            and  m.birthday=#{birthday}
         </if>
         <if test="del_flag !=null">
-            and  del_flag=#{del_flag}
+            and  m.del_flag=#{del_flag}
         </if>
     </select>
     <insert id="insertOne" parameterType="club.model.ClubMember">

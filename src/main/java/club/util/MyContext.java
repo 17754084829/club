@@ -78,6 +78,8 @@ public class MyContext {
             t=clz.cast(clz.newInstance());
             Field idF=clz.getDeclaredField("id");
             Field nameF=clz.getDeclaredField("name");
+            Field delFlag=clz.getDeclaredField("del_flag");
+            delFlag.setAccessible(true);
             idF.setAccessible(true);
             nameF.setAccessible(true);
             if(!StringUtils.isNullOrEmpty(id)){
@@ -86,6 +88,7 @@ public class MyContext {
             if(!StringUtils.isNullOrEmpty(name)) {
                 nameF.set(t, name);
             }
+            delFlag.set(t,"N");
         }catch (Exception e){
             System.err.println(e.getMessage());
         }

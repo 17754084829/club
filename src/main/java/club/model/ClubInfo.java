@@ -15,7 +15,6 @@ public class ClubInfo {
     //指导老师id
     private String teacher_id;
     //社团成员
-    @DescFiled("社团成员")
     private String club_member_id;
     //社团成立时间
     @DescFiled("社团成立时间")
@@ -25,6 +24,10 @@ public class ClubInfo {
     private String desc;
     //是否删除
     private String del_flag;
+    @DescFiled("老师名称")
+    private String teacher_name;
+    @DescFiled("成员名称")
+    private String member_name;
 
     public String getId() {
         return id;
@@ -82,6 +85,22 @@ public class ClubInfo {
         this.del_flag = del_flag;
     }
 
+    public String getTeacher_name() {
+        return teacher_name;
+    }
+
+    public void setTeacher_name(String teacher_name) {
+        this.teacher_name = teacher_name;
+    }
+
+    public String getMember_name() {
+        return member_name;
+    }
+
+    public void setMember_name(String member_name) {
+        this.member_name = member_name;
+    }
+
     @Override
     public String toString() {
         return "ClubInfo{" +
@@ -92,6 +111,8 @@ public class ClubInfo {
                 ", club_found_time='" + club_found_time + '\'' +
                 ", desc='" + desc + '\'' +
                 ", del_flag='" + del_flag + '\'' +
+                ", teacher_name='" + teacher_name + '\'' +
+                ", member_name='" + member_name + '\'' +
                 '}';
     }
 }

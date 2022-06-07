@@ -43,7 +43,7 @@ public class SearchTable extends Eelement implements ActionListener{
     public void update(List<List<String>> data,String windowsName){
         this.table.updateTableData(data,windowsName);
     }
-
+    @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() instanceof JButton){
             String id=sid.getText().toString();

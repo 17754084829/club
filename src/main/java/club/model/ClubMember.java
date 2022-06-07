@@ -22,6 +22,8 @@ public class ClubMember {
     private String club_id;
     //是否删除
     private String del_flag;
+    @DescFiled("社团名称")
+    private String club_name;
 
     public String getId() {
         return id;
@@ -71,6 +73,14 @@ public class ClubMember {
         this.del_flag = del_flag;
     }
 
+    public String getClub_name() {
+        return club_name;
+    }
+
+    public void setClub_name(String club_name) {
+        this.club_name = club_name;
+    }
+
     @Override
     public String toString() {
         return "ClubMember{" +
@@ -80,6 +90,7 @@ public class ClubMember {
                 ", birthday='" + birthday + '\'' +
                 ", club_id='" + club_id + '\'' +
                 ", del_flag='" + del_flag + '\'' +
+                ", club_name='" + club_name + '\'' +
                 '}';
     }
 }

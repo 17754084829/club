@@ -23,6 +23,8 @@ public class Teacher {
     private String birthday;
     //是否删除
     private String del_flag;
+    @DescFiled("社团名称")
+    private String club_name;
 
     public String getId() {
         return id;
@@ -72,6 +74,14 @@ public class Teacher {
         this.del_flag = del_flag;
     }
 
+    public String getClub_name() {
+        return club_name;
+    }
+
+    public void setClub_name(String club_name) {
+        this.club_name = club_name;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +
@@ -81,6 +91,7 @@ public class Teacher {
                 ", sex='" + sex + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", del_flag='" + del_flag + '\'' +
+                ", club_name='" + club_name + '\'' +
                 '}';
     }
 }

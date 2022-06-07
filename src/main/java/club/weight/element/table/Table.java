@@ -1,9 +1,12 @@
 package club.weight.element.table;
 
 import club.weight.element.Eelement;
+import club.weight.element.dialog.DialogClubInfo;
 import com.mysql.jdbc.StringUtils;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.text.html.parser.Element;
 import java.util.List;
@@ -62,6 +65,18 @@ public class Table extends Eelement {
         f.setLayout(new BorderLayout());
         tableModel=new TableModel(data.get(0),data.subList(1,data.size()));
         JTable t = new JTable(tableModel);
+        t.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                int rowIndex=t.getSelectedRow();
+                if(rowIndex<0){
+                    return;
+                }
+                String id=(String)t.getModel().getValueAt(rowIndex,0);
+                DialogClubInfo clubInfo=new DialogClubInfo("社团信息",id);
+                clubInfo.show();
+            }
+        });
         jTable=t;
         // 根据t创建 JScrollPane
         JScrollPane sp = new JScrollPane(t);

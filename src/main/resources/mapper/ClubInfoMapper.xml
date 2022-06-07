@@ -7,13 +7,13 @@
 
     <!--sql-->
     <select id="getList" parameterType="club.model.ClubInfo" resultType="club.model.ClubInfo">
-        select * from club_info
-        where 1=1
+        select cl.*,t.name as teacher_name,m.name as member_name from club_info cl,teacher t,club_member m
+        where cl.teacher_id=t.id and cl.club_member_id=m.id
         <if test="id !=null">
-            and  id=#{id}
+            and  cl.id=#{id}
         </if>
         <if test="name !=null">
-            and  `name`=#{name}
+            and  cl.`name`=#{name}
         </if>
         <if test="teacher_id !=null">
             and  teacher_id=#{teacher_id}
@@ -25,7 +25,7 @@
             and  club_found_time=#{club_found_time}
         </if>
         <if test="del_flag !=null">
-            and  del_flag=#{del_flag}
+            and  cl.del_flag=#{del_flag}
         </if>
     </select>
     <insert id="insertOne" parameterType="club.model.ClubInfo">
