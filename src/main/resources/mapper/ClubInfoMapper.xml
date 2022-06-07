@@ -13,7 +13,7 @@
             and  id=#{id}
         </if>
         <if test="name !=null">
-            and  name=#{name}
+            and  `name`=#{name}
         </if>
         <if test="teacher_id !=null">
             and  teacher_id=#{teacher_id}
@@ -33,11 +33,11 @@
     </insert>
     <update id="updateOne" parameterType="club.model.ClubInfo">
         update club_info set
-        "name"=#{name},
+        `name`=#{name},
         teacher_id=#{teacher_id},
         club_member_id=#{club_member_id},
         club_found_time=#{club_found_time},
-        "desc"=#{desc},
+        `desc`=#{desc},
         del_flag=#{del_flag},
         where id=#{id}
     </update>

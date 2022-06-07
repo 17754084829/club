@@ -1,20 +1,27 @@
 package club.model;
 
+import club.annonation.DescFiled;
+
 /**
  * 社团信息
  * */
 public class ClubInfo {
     //社团id
+    @DescFiled("社团id")
     private String id;
     //社团名称
+    @DescFiled("社团名称")
     private String name;
     //指导老师id
     private String teacher_id;
     //社团成员
+    @DescFiled("社团成员")
     private String club_member_id;
     //社团成立时间
+    @DescFiled("社团成立时间")
     private String club_found_time;
     //社团描述
+    @DescFiled("社团描述")
     private String desc;
     //是否删除
     private String del_flag;

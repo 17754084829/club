@@ -1,14 +1,23 @@
 package club.main;
 
-import club.dao.ClubInfoDao;
-import club.dao.TeacherDao;
+import club.dao.ClubMemberDao;
 import club.model.ClubInfo;
-import club.util.MybatiesUtils;
-import club.weight.element.Table;
-import org.apache.ibatis.session.SqlSession;
+import club.model.ClubMember;
+import club.model.Teacher;
+import club.service.ClubInfoService;
+import club.util.MyContext;
+import club.weight.element.table.SearchTable;
+import club.weight.element.table.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        new Table();
+    public static void main(String[] args) throws Exception{
+        ClubInfoService service=MyContext.getObject(ClubInfoService.class);
+        List<List<String>> list=MyContext.getModelList(ClubInfo.class,service.getList(null));
+        Table table=new Table("社团",list);
+        SearchTable searchTable=new SearchTable(table);
+        searchTable.show();
     }
 }

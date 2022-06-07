@@ -1,15 +1,22 @@
 package club.model;
+
+import club.annonation.DescFiled;
+
 /**
  * 社团成员信息
  * */
 public class ClubMember {
     //成员id
+    @DescFiled("成员id")
     private String id;
     //成员名称
+    @DescFiled("成员名称")
     private String name;
     //成员性别
+    @DescFiled("成员性别")
     private String sex;
     //成员生日
+    @DescFiled("成员生日")
     private String birthday;
     //社团id
     private String club_id;

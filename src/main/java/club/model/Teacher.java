@@ -1,17 +1,25 @@
 package club.model;
+
+import club.annonation.DescFiled;
+
 /**
  * 老师信息
  * **/
 public class Teacher {
     //老师id
+    @DescFiled("老师id")
     private String id;
     //老师名称
+    @DescFiled("老师名称")
     private String name;
     //社团id
+    @DescFiled("社团id")
     private String club_id;
     //性别
+    @DescFiled("性别")
     private String sex;
     //生日
+    @DescFiled("生日")
     private String birthday;
     //是否删除
     private String del_flag;

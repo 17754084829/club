@@ -4,15 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--configuration core file-->
 <configuration>
-
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING" />-->
+<!--    </settings>-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/club?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="url" value="jdbc:mysql://216.250.96.52:3306/club?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
                 <property name="username" value="root"/>
-                <property name="password" value="sj1314520"/>
+                <property name="password" value="root "/>
             </dataSource>
         </environment>
     </environments>
