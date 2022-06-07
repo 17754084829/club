@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffb72e22-c1f2-4166-8969-865a4ac7e47a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/club.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/annonation/DescFiled.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/service/ClubInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/service/ClubMemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/service/TeacherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/util/MyContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/weight/element/Eelement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/weight/element/table/SearchTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/model/ClubInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/model/ClubInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/model/ClubMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/model/ClubMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/model/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/weight/element/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/weight/element/table/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ClubInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ClubInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ClubMemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ClubMemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TeacherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybaties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybaties.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/dao/ClubInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/dao/ClubInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/dao/ClubMemberDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/dao/ClubMemberDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/dao/TeacherDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/dao/TeacherDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/model/ClubInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/model/ClubInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/model/ClubMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/model/ClubMember.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/model/Teacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/util/GenerateID.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/util/GenerateID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/club/util/MybatiesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/club/util/MybatiesUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybaties.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybaties.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ffb72e22-c1f2-4166-8969-865a4ac7e47a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -575,8 +544,23 @@
       <workItem from="1654404828402" duration="1217000" />
       <workItem from="1654519069351" duration="8497000" />
       <workItem from="1654564767506" duration="10402000" />
-      <workItem from="1654592075192" duration="8669000" />
+      <workItem from="1654592075192" duration="8986000" />
     </task>
+    <task id="LOCAL-00001" summary="second">
+      <created>1654600894621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654600894621</updated>
+    </task>
+    <task id="LOCAL-00002" summary="second">
+      <created>1654601139525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654601139525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -665,6 +649,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="second" />
+    <option name="LAST_COMMIT_MESSAGE" value="second" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
