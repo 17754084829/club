@@ -12,10 +12,6 @@ public class ClubInfo {
     //社团名称
     @DescFiled("社团名称")
     private String name;
-    //指导老师id
-    private String teacher_id;
-    //社团成员
-    private String club_member_id;
     //社团成立时间
     @DescFiled("社团成立时间")
     private String club_found_time;
@@ -24,10 +20,6 @@ public class ClubInfo {
     private String desc;
     //是否删除
     private String del_flag;
-    @DescFiled("老师名称")
-    private String teacher_name;
-    @DescFiled("成员名称")
-    private String member_name;
 
     public String getId() {
         return id;
@@ -45,21 +37,6 @@ public class ClubInfo {
         this.name = name;
     }
 
-    public String getTeacher_id() {
-        return teacher_id;
-    }
-
-    public void setTeacher_id(String teacher_id) {
-        this.teacher_id = teacher_id;
-    }
-
-    public String getClub_member_id() {
-        return club_member_id;
-    }
-
-    public void setClub_member_id(String club_member_id) {
-        this.club_member_id = club_member_id;
-    }
 
     public String getClub_found_time() {
         return club_found_time;
@@ -85,34 +62,14 @@ public class ClubInfo {
         this.del_flag = del_flag;
     }
 
-    public String getTeacher_name() {
-        return teacher_name;
-    }
-
-    public void setTeacher_name(String teacher_name) {
-        this.teacher_name = teacher_name;
-    }
-
-    public String getMember_name() {
-        return member_name;
-    }
-
-    public void setMember_name(String member_name) {
-        this.member_name = member_name;
-    }
-
     @Override
     public String toString() {
         return "ClubInfo{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", teacher_id='" + teacher_id + '\'' +
-                ", club_member_id='" + club_member_id + '\'' +
                 ", club_found_time='" + club_found_time + '\'' +
                 ", desc='" + desc + '\'' +
                 ", del_flag='" + del_flag + '\'' +
-                ", teacher_name='" + teacher_name + '\'' +
-                ", member_name='" + member_name + '\'' +
                 '}';
     }
 }

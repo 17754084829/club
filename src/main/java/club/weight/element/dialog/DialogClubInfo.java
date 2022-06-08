@@ -12,7 +12,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class DialogClubInfo extends Eelement {
+    private String id;
     public DialogClubInfo(String title,String id){
+        this.id=id;
         f=new JFrame(title);
         f.setSize(400,300);
         f.setLocation(100,100);
@@ -40,14 +42,37 @@ public class DialogClubInfo extends Eelement {
         f.add(descTitle);
         f.add(descFild);
         f.add(add);
-        f.add(update);
-        f.add(del);
+        if(!StringUtils.isNullOrEmpty(id)){
+            f.add(update);
+            f.add(del);
+        }
         add.addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClubInfo clubInfo=new ClubInfo();
                 GenerateID.getClubInfoId();
                 clubInfo.setId(GenerateID.getClubInfoId());
+                clubInfo.setName(nameFlid.getText().toString());
+                clubInfo.setClub_found_time(birthFiled.getText().toString());
+                clubInfo.setDesc(descFild.getText().toString());
+                clubInfo.setDel_flag("N");
+                MyContext.getObject(ClubInfoService.class).saveOrUpdate(clubInfo);
+            }
+        });
+        del.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClubInfo clubInfo=new ClubInfo();
+                clubInfo.setId(id);
+                clubInfo.setDel_flag("Y");
+                MyContext.getObject(ClubInfoService.class).saveOrUpdate(clubInfo);
+            }
+        });
+        update.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClubInfo clubInfo=new ClubInfo();
+                clubInfo.setId(id);
                 clubInfo.setName(nameFlid.getText().toString());
                 clubInfo.setClub_found_time(birthFiled.getText().toString());
                 clubInfo.setDesc(descFild.getText().toString());

@@ -16,12 +16,16 @@ public class ClubInfoService {
     }
 
     public int saveOrUpdate(ClubInfo clubInfo){
-        List<ClubInfo> clubInfos= clubInfoDao.getList(clubInfo);
+        ClubInfo query=new ClubInfo();
+        query.setId(clubInfo.getId());
+        List<ClubInfo> clubInfos= clubInfoDao.getList(query);
         int rs=0;
         if(clubInfos!=null&&clubInfos.size()>0){
             rs=clubInfoDao.updateOne(clubInfo);
+            sqlSession.commit();
         }else{
             rs=clubInfoDao.insertOne(clubInfo);
+            sqlSession.commit();
         }
         return rs;
     }

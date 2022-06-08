@@ -15,7 +15,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception{
         ClubInfoService service=MyContext.getObject(ClubInfoService.class);
-        List<List<String>> list=MyContext.getModelList(ClubInfo.class,service.getList(null));
+        ClubInfo query=new ClubInfo();
+        query.setDel_flag("N");
+        List<List<String>> list=MyContext.getModelList(ClubInfo.class,service.getList(query));
         Table table=new Table("社团",list);
         SearchTable searchTable=new SearchTable(table);
         searchTable.show();
