@@ -18,12 +18,16 @@ public class TeacherService {
     }
 
     public int saveOrUpdate(Teacher teacher){
-        List<Teacher> clubInfos= teacherDao.getList(teacher);
+        Teacher query=new Teacher();
+        query.setId(teacher.getId());
+        List<Teacher> clubInfos= teacherDao.getList(query);
         int rs=0;
         if(clubInfos!=null&&clubInfos.size()>0){
             rs=teacherDao.updateOne(teacher);
+            sqlSession.commit();
         }else{
             rs=teacherDao.insertOne(teacher);
+            sqlSession.commit();
         }
         return rs;
     }

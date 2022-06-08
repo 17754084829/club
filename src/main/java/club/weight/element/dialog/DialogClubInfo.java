@@ -12,19 +12,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class DialogClubInfo extends Eelement {
-    private String id;
-    public DialogClubInfo(String title,String id){
-        this.id=id;
+    private DialogClubInfo thisPtr=null;
+    public DialogClubInfo(String title,final String id){
+        this.thisPtr=this;
         f=new JFrame(title);
         f.setSize(400,300);
-        f.setLocation(100,100);
+        f.setLocation(200,300);
         f.setResizable(false);
         f.setLayout(new FlowLayout());
         JLabel nameTitle=new JLabel("名称");
-        JTextField nameFlid=new JTextField();
+        final JTextField nameFlid=new JTextField();
         nameFlid.setColumns(28);
         JLabel birthTitle=new JLabel("成立时间");
-        JTextField birthFiled=new JTextField();
+        final JTextField birthFiled=new JTextField();
         birthFiled.setColumns(28);
         JLabel descTitle=new JLabel("描述");
         JButton add=new JButton("新增");
@@ -33,7 +33,7 @@ public class DialogClubInfo extends Eelement {
         update.setSize(20,20);
         JButton del=new JButton("删除");
         del.setSize(20,20);
-        JTextField descFild=new JTextField();
+        final JTextField descFild=new JTextField();
         descFild.setColumns(28);
         f.add(nameTitle);
         f.add(nameFlid);
@@ -50,13 +50,14 @@ public class DialogClubInfo extends Eelement {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClubInfo clubInfo=new ClubInfo();
-                GenerateID.getClubInfoId();
                 clubInfo.setId(GenerateID.getClubInfoId());
                 clubInfo.setName(nameFlid.getText().toString());
                 clubInfo.setClub_found_time(birthFiled.getText().toString());
                 clubInfo.setDesc(descFild.getText().toString());
                 clubInfo.setDel_flag("N");
                 MyContext.getObject(ClubInfoService.class).saveOrUpdate(clubInfo);
+                JOptionPane.showMessageDialog(null,"添加成功");
+                thisPtr.close();
             }
         });
         del.addActionListener(new AbstractAction() {
@@ -66,6 +67,8 @@ public class DialogClubInfo extends Eelement {
                 clubInfo.setId(id);
                 clubInfo.setDel_flag("Y");
                 MyContext.getObject(ClubInfoService.class).saveOrUpdate(clubInfo);
+                JOptionPane.showMessageDialog(null,"删除成功");
+                thisPtr.close();
             }
         });
         update.addActionListener(new AbstractAction() {
@@ -78,6 +81,8 @@ public class DialogClubInfo extends Eelement {
                 clubInfo.setDesc(descFild.getText().toString());
                 clubInfo.setDel_flag("N");
                 MyContext.getObject(ClubInfoService.class).saveOrUpdate(clubInfo);
+                JOptionPane.showMessageDialog(null,"更新成功");
+                thisPtr.close();
             }
         });
        ClubInfo clubInfo=null;
@@ -97,3 +102,5 @@ public class DialogClubInfo extends Eelement {
         super.shutDown();
     }
 }
+
+

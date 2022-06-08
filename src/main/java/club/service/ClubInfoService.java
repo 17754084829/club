@@ -33,4 +33,7 @@ public class ClubInfoService {
         List<ClubInfo> list= clubInfoDao.getList(clubInfo);
         return list;
     }
+    public List<String> getListClubName(){
+        return clubInfoDao.getListClubName();
+    }
 }

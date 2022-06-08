@@ -29,15 +29,15 @@
         </if>
     </select>
     <insert id="insertOne" parameterType="club.model.Teacher">
-      insert into club_info values(#{id},#{name},#{club_id},#{sex},#{birthday},#{del_flag})
+      insert into teacher values(#{id},#{name},#{club_id},#{sex},#{birthday},#{del_flag})
     </insert>
     <update id="updateOne" parameterType="club.model.Teacher">
-        update club_info set
+        update teacher set
         `name`=#{name},
         club_id=#{club_id},
         sex=#{sex},
         birthday=#{birthday},
-        del_flag=#{del_flag},
+        del_flag=#{del_flag}
         where id=#{id}
     </update>
 </mapper>

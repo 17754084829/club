@@ -18,12 +18,16 @@ public class ClubMemberService {
     }
 
     public int saveOrUpdate(ClubMember clubMember){
-        List<ClubMember> clubInfos= clubMemberDao.getList(clubMember);
+        ClubMember query=new ClubMember();
+        query.setId(clubMember.getId());
+        List<ClubMember> clubInfos= clubMemberDao.getList(query);
         int rs=0;
         if(clubInfos!=null&&clubInfos.size()>0){
             rs=clubMemberDao.updateOne(clubMember);
+            sqlSession.commit();
         }else{
             rs=clubMemberDao.insertOne(clubMember);
+            sqlSession.commit();
         }
         return rs;
     }

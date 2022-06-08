@@ -13,7 +13,6 @@ public class Teacher {
     @DescFiled("老师名称")
     private String name;
     //社团id
-    @DescFiled("社团id")
     private String club_id;
     //性别
     @DescFiled("性别")

@@ -33,4 +33,7 @@
         del_flag=#{del_flag}
         where id=#{id}
     </update>
+    <select id="getListClubName" resultType="String">
+        select `name` from club_info where del_flag='N'
+    </select>
 </mapper>

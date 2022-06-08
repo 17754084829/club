@@ -2,6 +2,8 @@ package club.weight.element.table;
 
 import club.weight.element.Eelement;
 import club.weight.element.dialog.DialogClubInfo;
+import club.weight.element.dialog.DialogClubMember;
+import club.weight.element.dialog.DialogClubTeacher;
 import com.mysql.jdbc.StringUtils;
 
 import javax.swing.*;
@@ -9,6 +11,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.text.html.parser.Element;
+import java.awt.event.*;
 import java.util.List;
 import java.awt.*;
 
@@ -58,25 +61,46 @@ class TableModel extends AbstractTableModel{
 public class Table extends Eelement {
     private TableModel tableModel;
     private JTable jTable;
+    private String preSelect=null;
+    private Long preTime=0L;
     public Table(String windowsName,List<List<String>> data){
         f = new JFrame(windowsName);
         f.setSize(1000, 500);
-        f.setLocation(500, 300);
+        f.setLocation(200, 300);
         f.setLayout(new BorderLayout());
         tableModel=new TableModel(data.get(0),data.subList(1,data.size()));
-        JTable t = new JTable(tableModel);
-        t.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+        final JTable t = new JTable(tableModel);
+        t.addMouseListener(new MouseAdapter() {
             @Override
-            public void valueChanged(ListSelectionEvent e) {
-                int rowIndex=t.getSelectedRow();
+            public void mouseClicked(MouseEvent e) {
+                if(e.getButton()==3){
+                    String title=f.getTitle();
+                    int code="社团".equals(title)?1:("老师".equals(title)?2:3);
+                    switch (code){
+                        case 1:new DialogClubInfo(title,null).show();break;
+                        case 2:new DialogClubTeacher(title,null).show();break;
+                        default:new DialogClubMember(title,null).show();break;
+                    }
+                    return;
+                }
+                int rowIndex=t.rowAtPoint(e.getPoint());
                 if(rowIndex<0){
                     return;
                 }
                 String id=(String)t.getModel().getValueAt(rowIndex,0);
-                DialogClubInfo clubInfo=new DialogClubInfo("社团信息",id);
-                clubInfo.show();
+                if(preSelect==null||!id.equals(preSelect)){
+                    String title=f.getTitle();
+                    preSelect=id;
+                    int code="社团".equals(title)?1:("老师".equals(title)?2:3);
+                    switch (code){
+                        case 1:new DialogClubInfo(title,id).show();break;
+                        case 2:new DialogClubTeacher(title,id).show();break;
+                        default:new DialogClubMember(title,id).show();break;
+                    }
+                }
             }
         });
+
         jTable=t;
         // 根据t创建 JScrollPane
         JScrollPane sp = new JScrollPane(t);

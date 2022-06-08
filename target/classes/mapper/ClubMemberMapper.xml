@@ -37,7 +37,7 @@
         sex=#{sex},
         birthday=#{birthday},
         club_id=#{club_id},
-        del_flag=#{del_flag},
+        del_flag=#{del_flag}
         where id=#{id}
     </update>
 </mapper>

@@ -11,4 +11,6 @@ public interface ClubInfoDao {
     int updateOne(ClubInfo clubInfo);
     //通过条件获取数据
     List<ClubInfo> getList(ClubInfo clubInfo);
+    //获取所有社团名称
+    List<String> getListClubName();
 }
